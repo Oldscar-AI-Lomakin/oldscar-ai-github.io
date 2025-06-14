@@ -1,37 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oldscar AI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Oldscar AI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo-strip">
-            <img src="logos/toyota.png" alt="Toyota">
-            <img src="logos/honda.png" alt="Honda">
-            <img src="logos/nissan.png" alt="Nissan">
-            <img src="logos/subaru.png" alt="Subaru">
-            <img src="logos/mazda.png" alt="Mazda">
-            <img src="logos/mitsubishi.png" alt="Mitsubishi">
-            <img src="logos/lexus.png" alt="Lexus">
-            <img src="logos/suzuki.png" alt="Suzuki">
-        </div>
-        <h1>Oldscar AI</h1>
-        <p class="slogan">Майбутнє вже тут</p>
-    </header>
-    <main>
-        <div class="dashboard">
-            <div class="gauge speed"></div>
-            <div class="gauge rpm"></div>
-        </div>
-        <button id="downloadBtn" disabled>Завантажити (доступно через 3 тижні)</button>
-    </main>
-    <footer>
-        <p>Зв'язатися: <a href="mailto:lomakinadrian3@gmail.com">Написати нам</a></p>
-    </footer>
-    <script src="script.js"></script>
+  <div class="background-dashboard"></div>
+  <div class="content">
+    <h1>Oldscar AI</h1>
+    <p class="tagline">Майбутнє вже тут</p>
+    <div class="car-container">
+      <canvas id="carCanvas"></canvas>
+    </div>
+    <button class="cta-button" disabled>Завантажити (доступно через 3 тижні)</button>
+    <p class="contact">Зв’язатися: <a href="mailto:support@oldscar.ai">Написати нам</a></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
