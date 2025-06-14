@@ -1,22 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <title>Oldscar AI</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Oldscar AI</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background-dashboard"></div>
-  <div class="content">
-    <h1>Oldscar AI</h1>
-    <p class="tagline">Майбутнє вже тут</p>
-    <div class="car-container">
-      <canvas id="carCanvas"></canvas>
+    <div class="container">
+        <h1>Oldscar AI</h1>
+        <h2>Майбутнє вже тут</h2>
+        <img src="background.jpg" alt="Oldcar Fantasy" class="bg"/>
+        <img src="car_fantasy.png" alt="Ретро авто" class="car"/>
+        <div class="download-section">
+            <p id="countdown">Завантажити (доступно через 3 тижні)</p>
+            <button disabled>Завантажити</button>
+        </div>
     </div>
-    <button class="cta-button" disabled>Завантажити (доступно через 3 тижні)</button>
-    <p class="contact">Зв’язатися: <a href="mailto:support@oldscar.ai">Написати нам</a></p>
-  </div>
-  <script src="script.js"></script>
+    <script>
+        const countdown = document.getElementById("countdown");
+        const targetDate = new Date("2025-07-05T19:16:27");
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                countdown.textContent = "Завантажити";
+                document.querySelector("button").disabled = false;
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            countdown.textContent = `Завантажити (через ${days} дн. ${hours} год. ${minutes} хв. ${seconds} сек.)`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
